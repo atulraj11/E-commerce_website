@@ -1,0 +1,85 @@
+/* html {
+    scroll-behavior: smooth;
+} */
+
+/* :target::before {
+    content: "";
+    display: block;
+    height: 200px;
+    margin: -200px 0 0;
+}  */
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    text-decoration-color: none;
+}
+
+.nav-link {
+    color : #fff !important;
+}
+
+.nav-link:hover {
+    color:rgba(255,255,255,.5) !important;
+}
+
+.white-text {
+    color: #fff !important;
+}
+
+ul a {
+    text-decoration: none;
+    color: white;
+}
+
+.dropdown-menu {
+    background-color: #007bff;
+    border: none;
+}
+
+.dropdown-item:hover {
+    background-color: red;
+}
+
+.category-link:hover {
+    color:  greenyellow;
+}
+
+.addCart {
+    visibility: hidden;
+    padding: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    z-index: 10;
+}
+
+.cart {
+    visibility: hidden;
+    padding: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    z-index: 10;
+}
+
+#cart-table {
+    display: block;
+    height: 30vh;
+    overflow-y: auto;
+}
+
+/* #mycartbtn {
+    float: right;
+} */
+
+[role=button]{cursor:pointer}

@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+    
+        <title>My First Website</title>
+
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <!-- ----------------------------------- -->
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="/__/firebase/7.19.1/firebase-app.js"></script>
+
+        <!-- Initialize Firebase -->
+        <script src="/__/firebase/init.js"></script>
+
+        <!--Firebase Authentication Services-->
+        <script src="/__/firebase/7.19.1/firebase-auth.js"></script>
+
+        <!--Firebase Database Services-->
+        <script src="/__/firebase/7.19.1/firebase-database.js"></script>
+
+        <!--Linking CCustom Style-->
+        <link rel="stylesheet" href="CSS/style1.css">
+
+        <!--Linking Custom JavaScript-->
+        <script src="Scripts/script1.js"></script>
+        <script src="Scripts/indexScript.js"></script>
+        <script src="Scripts/signOut.js"></script>
+
+        <!--Link for font awesome favicons-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
+
+        
+    </head>
+
+    <body>
+
+        <header>
+            
+            <nav class="navbar navbar-dark navbar-expand-lg bg-primary fixed-top">
+                <div class="container">
+
+                    <a class="navbar-brand white-text" href="#"> PARAM-STORE </a>
+
+                    <span class="nav-link cart-icon" id="mycartbtn" role="button" onclick="open_cart()"> <i class="fa fa-shopping-cart"></i> My Cart </span>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul class="navbar-nav mr-auto smooth-scroll">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#intro-section"><i class="fa fa-fw fa-home"></i> Home </a>
+                            </li>
+                            <li class="dropdown nav-item">
+                                <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#"><i class="fa fa-th"></i> Category
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu mr-auto smooth-scroll">
+                                  <li class="dropdown-item"><a class="category-link" href="index.html#rubber_bands"> Rubber-Band </a></li>
+                                  <li class="dropdown-item"><a class="category-link" href="index.html#hair_bands"> Hair-Band </a></li>
+                                  <li class="dropdown-item"><a class="category-link" href="index.html#clutures"> Cluture </a></li>
+                                  <li class="dropdown-item"><a class="category-link" href="index.html#tik-tak"> Tik-Tak Clips </a></li>
+                                  <li class="dropdown-item"><a class="category-link" href="index.html#"> Teddy Bear </a></li>
+                                  <li class="dropdown-item"><a class="category-link" href="index.html#"> Flower Pots </a></li>
+                                  <li class="dropdown-item"><a class="category-link" href="index.html#"> Gifts Items </a></li>
+                                  <li class="dropdown-item"><a class="category-link" href="index.html#hair-accessories"> Hair Accessories </a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#contact" data-offset="90"><i class="fa fa-fw fa-envelope"></i> Contact </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="signinbtn" href="signin.html" data-offset="90"><i class="fa fa-fw fa-sign-in"></i> Login </a>
+                            </li>
+                            <li class="nav-item">
+                                <span class="nav-link" id="signoutbtn" role="button" onclick="signOut()" data-offset="90"><i class="fa fa-fw fa-sign-in"></i> Log Out </span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="signupbtn" href="signup.html" data-offset="90"><i class="fa fa-fw fa-user"></i> Sign Up </a>
+                            </li>
+                        </ul>
+                        <!-- Social Icon  -->
+                        <ul class="navbar-nav nav-flex-icons">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fa fa-facebook-square"></i> Facebook
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar -->    
+        </header>
+
+        <main>
+            <section class="intro-section pt-3" id="intro-section">
+                <div class="jumbotron text-center" style="background-color: #ffb3ff;">
+                    <h6 class="display-4">
+                        <span style="color: rgb(247, 0, 255);"> Welcome to </span> <br>
+                        <span style="color: rgba(216, 13, 57, 0.945); font-weight:500;"> PARAM STORE </span>
+                    </h6>
+                    <p class="lead mt-3">
+                        Welcome to Param Store where you can get everything related to fashion and gifting.
+                        Be it for an occasion or for day to day use, you will find the right accessories for you.
+                        Be it a birthday party of a kid or the inaugration of a newly built house,
+                        we have the perfect gifting option for you.
+                    </p>
+                    <hr class="my-5">
+                    <a href="#contact"> <button class="btn btn-lg btn-outline-success"> Contact me </button> </a>
+                </div>
+            </section>
+            <section class="products-display">
+                <div class="container-fluid">
+
+                    <!--Start of Clutures Section-->
+
+                    <div class="alert-danger rounded p-2" id="clutures" style="background-color: #ff1a1a;">
+                        <h3 style="color:white"> Clutures </h3>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff9900;">
+                                    <h5>Stone Embedded Black Round Cluture (Small) @ <span class="price">Rs 40/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Clutures/Cluture-1.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #b3ccff;">
+                                    <h4> Product Code: <span class="code">CLT-001</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="CLT-001" onclick="addToCart('CLT-001')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div> 
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #66ff33;">
+                                    <h5> Stone Embedded Triangular Cluture (Small) @ <span class="price">Rs 40/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Clutures/Cluture-2.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #cc33ff;">
+                                    <h4> Product Code: <span class="code">CLT-002</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="CLT-002" onclick="addToCart('CLT-002')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>  
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff4da6;">
+                                    <h5> Stone Embedded Triangular Dark Shade Cluture (Small) @ <span class="price">Rs 40/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Clutures/Cluture-3.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #ffff66;">
+                                    <h4> Product Code: <span class="code">CLT-003</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="CLT-003" onclick="addToCart('CLT-003')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>  
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header"  style="background-color: #ff9966;">
+                                    <h5> Stone Embedded Triangular Cluture (Large) @ <span class="price">Rs 60/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Clutures/Cluture-4.jpg">
+                                </div>
+                                <div class="card-footer text-center">
+                                    <h4> Product Code: <span class="code">CLT-004</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="CLT-004" onclick="addToCart('CLT-004')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header"  style="background-color: #ff4da6;;">
+                                    <h5> Stone Embedded Flower Cluture (Large) @ <span class="price">Rs 60/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Clutures/Cluture-5.jpg">
+                                </div>
+                                <div class="card-footer text-center"  style="background-color: #ffff66;">
+                                    <h4> Product Code: <span class="code">CLT-005</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="CLT-005" onclick="addToCart('CLT-005')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div> 
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header"  style="background-color: #ff9966;">
+                                    <h5> Stone Embedded Black Triangular Cluture (Large) @ <span class="price">Rs 60/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Clutures/Cluture-6.jpg">
+                                </div>
+                                <div class="card-footer text-center">
+                                    <h4> Product Code: <span class="code">CLT-006</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="CLT-006" onclick="addToCart('CLT-006')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>  
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff9900;">
+                                    <h5> Stone Embedded Black Cluture (Medium) @ <span class="price">Rs 50/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Clutures/Cluture-7.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #b3ccff;">
+                                    <h4> Product Code: <span class="code">CLT-007</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="CLT-007" onclick="addToCart('CLT-007')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>  
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff1a1a;">
+                                    <h5> Stone Embedded Heavy Metallic Cluture (Medium) @ <span class="price">Rs 70/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Clutures/Cluture-8.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #cc33ff;">
+                                    <h4> Product Code: <span class="code">CLT-008</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="CLT-008" onclick="addToCart('CLT-008')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff1a1a;" >
+                                    <h5> Stone Embedded Plastic Cluture (Medium) @ <span class="price">Rs 30/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Clutures/Cluture-9.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #cc33ff;">
+                                    <h4> Product Code: <span class="code">CLT-009</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="CLT-009" onclick="addToCart('CLT-009')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff9966;">
+                                    <h5> Stone Embedded Transparent Plastic Cluture (Medium) @ <span class="price">Rs 30/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Clutures/Cluture-10.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #b3ccff;">
+                                    <h4> Product Code: <span class="code">CLT-010</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="CLT-010" onclick="addToCart('CLT-010')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff9900;">
+                                    <h5> Plastic Cluture (Small) @ <span class="price">Rs 15/Pair</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Clutures/Cluture-11.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #66ff33;">
+                                    <h4> Product Code: <span class="code">CLT-011</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="CLT-011" onclick="addToCart('CLT-011')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ffff66;">
+                                    <h5> Heavy Platic Triangular Cluture (Small) @ <span class="price">Rs 20/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Clutures/Cluture-12.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #ff4da6;">
+                                    <h4> Product Code: <span class="code">CLT-012</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="CLT-012" onclick="addToCart('CLT-012')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff9966;">
+                                    <h5> Light Plastic Moon Cluture (Medium) @ <span class="price">Rs 10/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Clutures/Cluture-13.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #ff9900;">
+                                    <h4> Product Code: <span class="code">CLT-013</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="CLT-013" onclick="addToCart('CLT-013')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ffff66;">
+                                    <h5> Light Plastic Square Cluture (Medium) @ <span class="price">Rs 10/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Clutures/Cluture-14.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #b3ccff;">
+                                    <h4> Product Code: <span class="code">CLT-014</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="CLT-014" onclick="addToCart('CLT-014')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff1a1a;">
+                                    <h5> Light Plastic Star Cluture (Medium) @ <span clas="price">Rs 10/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Clutures/Cluture-15.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #66ff33;">
+                                    <h4> Product Code: <span class="code">CLT-015</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="CLT-015" onclick="addToCart('CLT-015')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff9966;">
+                                    <h5> Light Plastic Star Multi-Colour Cluture (Medium) @ <span class="price">Rs 10/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Clutures/Cluture-16.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #ff9900;">
+                                    <h4> Product Code: <span class="code">CLT-016</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="CLT-016" onclick="addToCart('CLT-016')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+
+                    <!--End of Clutures Section-->
+
+                    <!--Start of Rubber Band Section-->
+
+                    <div class="alert-danger rounded mt-3 p-2" id="rubber_bands"  style="background-color: #66ff33;">
+                        <h3 style="color: #ffffff;"> Rubber Bands </h3>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #cc33ff;">
+                                    <h5> Smooth Rubber Band Dark Colour(Large) @ <span class="price">Rs 10/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Rubber-bands/Rubber-band-1.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #ffff66;">
+                                    <h4> Product Code: <span class="code">RB-001</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="RB-001" onclick="addToCart('RB-001')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff1a1a;">
+                                    <h5> Smooth Rubber Band Multi-Colour(Large) @ <span class="price">Rs 10/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Rubber-bands/Rubber-band-2.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #66ff33;">
+                                    <h4> Product Code: <span class="code">RB-002</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="RB-002" onclick="addToCart('RB-002')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff9900;">
+                                    <h5> Single Stone Embedded Rubber Band (Large) @ <span class="price">Rs 5/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Rubber-bands/Rubber-band-3.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #b3ccff;">
+                                    <h4> Product Code: <span class="code">RB-003</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="RB-003" onclick="addToCart('RB-003')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div> 
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #66ff33;">
+                                    <h5> Simple Rubber Band Multi-Colour (Medium) @ <span class="price">Rs 25/10 Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Rubber-bands/Rubber-band-4.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #cc33ff;">
+                                    <h4> Product Code: <span class="code">RB-004</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="RB-004" onclick="addToCart('RB-004')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>  
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff4da6;">
+                                    <h5> Pearl Embedded Rubber Band Multi-Colour(Large) @ <span class="price">Rs 40/5 Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Rubber-bands/Rubber-band-5.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #ffff66;">
+                                    <h4> Product Code: <span class="code">RB-005</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="RB-005" onclick="addToCart('RB-005')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>  
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header"  style="background-color: #ff9966;">
+                                    <h5> Watery-Stone Rubber Band Multi-Colour(Medium) @ <span class="price">Rs 25/Pair</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Rubber-bands/Rubber-band-6.jpg">
+                                </div>
+                                <div class="card-footer text-center">
+                                    <h4> Product Code: <span class="code">RB-006</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="RB-006" onclick="addToCart('RB-006')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header"  style="background-color: #ff4da6;;">
+                                    <h5> Flower-Embedded Rubber Band Multi-Colour(Medium) @ <span class="price">Rs 25/Pair</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Rubber-bands/Rubber-band-7.jpg">
+                                </div>
+                                <div class="card-footer text-center"  style="background-color: #ffff66;">
+                                    <h4> Product Code: <span class="code">RB-007</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="RB-007" onclick="addToCart('RB-007')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div> 
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header"  style="background-color: #ff9966;">
+                                    <h5> Flower-Petal Rubber Band Multi-Colour(Medium) @ <span class="price">Rs 25/Pair</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Rubber-bands/Rubber-band-8.jpg">
+                                </div>
+                                <div class="card-footer text-center">
+                                    <h4> Product Code: <span class="code">RB-008</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="RB-008" onclick="addToCart('RB-008')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>  
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff9900;">
+                                    <h5> Rubber Band Multi-Colour(Medium) @ <span class="price">Rs 75/Box</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Rubber-bands/Rubber-band-9.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #b3ccff;">
+                                    <h4> Product Code: <span class="code">RB-009</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="RB-009" onclick="addToCart('RB-009')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+
+                    <!--End of Rubber Band Section-->
+
+                    <!--Start of Hair band Section -->
+
+                    <div class="alert-danger rounded mt-3 p-2" id="hair_bands">
+                        <h3> Hair Bands </h3>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff1a1a;">
+                                    <h5> Hair Band @ <span class="price">Rs 20/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Hair-bands/Hair-band-1.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #cc33ff;">
+                                    <h4> Product Code: <span class="code">HB-001</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="HB-001" onclick="addToCart('HB-001')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff1a1a;" >
+                                    <h5> Hair Band @ <span class="price">Rs 35/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Hair-bands/Hair-band-2.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #cc33ff;">
+                                    <h4> Product Code: <spav class="code">HB-002</spav> </h4>
+                                    <button class="btn btn-success add_product_btn" id="HB-002" onclick="addToCart('HB-002')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff9966;">
+                                    <h5> Hair Band @ <span class="price">Rs 25/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Hair-bands/Hair-band-3.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #b3ccff;">
+                                    <h4> Product Code: <span class="code">HB-003</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="HB-003" onclick="addToCart('HB-003')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff9900;">
+                                    <h5> Hair Band @ <span class="price">Rs 25/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Hair-bands/Hair-band-4.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #66ff33;">
+                                    <h4> Product Code: <span class="code">HB-004</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="HB-004" onclick="addToCart('HB-004')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ffff66;">
+                                    <h5> Hair Band @ <span class="price">Rs 45/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Hair-bands/Hair-band-5.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #ff4da6;">
+                                    <h4> Product Code: <span class="code">HB-005</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="HB-005" onclick="addToCart('HB-005')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff9966;">
+                                    <h5> Hair Band @ <span class="price">Rs 20/Piece</span> </span></h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Hair-bands/Hair-band-6.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #ff9900;">
+                                    <h4> Product Code: <span class="code">HB-006</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="HB-006" onclick="addToCart('HB-006')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ffff66;">
+                                    <h5> Hair Band @ <span class="price">Rs 35/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Hair-bands/Hair-band-7.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #b3ccff;">
+                                    <h4> Product Code: <span class="code">HB-007</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="HB-007" onclick="addToCart('HB-007')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff1a1a;">
+                                    <h5> Hair Band @ <span class="price">Rs 20/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Hair-bands/Hair-band-8.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #66ff33;">
+                                    <h4> Product Code: <span class="code">HB-008</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="HB-008" onclick="addToCart('HB-008')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+
+                    <!--End of Hair Band Section-->
+
+                    <!--Start of Tik-tak Section-->
+
+                    <div class="alert-danger rounded mt-3 p-2" id="tik-tak">
+                        <h3> Tik-Tak Clips </h3>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff9966;">
+                                    <h5> Stone Embedded Tik-Tak Clips @ <span class="price">Rs 50/Dozen</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Tik-tak/Tik-tak-1.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #ff9900;">
+                                    <h5> Product Code: <span class="code">TT-001</span> </h5>
+                                    <button class="btn btn-success add_product_btn" id="TT-001" onclick="addToCart('TT-001')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #cc33ff;">
+                                    <h5> Barbie Doll Tik-Tak Clips @ <span class="price">Rs 40/Dozen</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Tik-tak/Tik-tak-2.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #ffff66;">
+                                    <h5> Product Code: <span class="code">TT-002</span> </h5>
+                                    <button class="btn btn-success add_product_btn" id="TT-002" onclick="addToCart('TT-002')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff1a1a;">
+                                    <h5> Multi-Colour Tik-Tak Clips @ <span class="price">Rs 30/Dozen</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Tik-tak/Tik-tak-3.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #66ff33;">
+                                    <h5> Product Code: <span class="code">TT-003</span> </h5>
+                                    <button class="btn btn-success add_product_btn" id="TT-003" onclick="addToCart('TT-003')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff9900;">
+                                    <h5> Multi-Colour Tik-Tak Clips @ <span class="price">Rs 25/Dozen</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Tik-tak/Tik-tak-4.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #b3ccff;">
+                                    <h5> Product Code: <span class="code">TT-004</span> </h5>
+                                    <button class="btn btn-success add_product_btn" id="TT-004" onclick="addToCart('TT-004')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+
+                    <!--End of Tik-tak Section-->
+
+                    <!--Start of Hair-accessories Section-->
+
+                    <div class="alert-danger rounded mt-3 p-2" id="hair-accessories">
+                        <h3> Hair Accessories </h3>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #66ff33;">
+                                    <h5> Flower Plastic Gazra @ <span class="price">Rs 35/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Hair-accessories/Hair-accessories-1.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #cc33ff;">
+                                    <h4> Product Code: <span class="code">HA-001</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="HA-001" onclick="addToCart('HA-001')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>  
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #ff4da6;">
+                                    <h5> Flower Multi-Colour Light Tiara @ <span class="price">Rs 50/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Hair-accessories/Hair-accessories-2.jpg">
+                                </div>
+                                <div class="card-footer text-center" style="background-color: #ffff66;">
+                                    <h4> Product Code: <span class="code">HA-002</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="HA-002" onclick="addToCart('HA-002')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>  
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header"  style="background-color: #ff9966;">
+                                    <h5> False Wade (Small) @ <span class="price">Rs 70/Piece</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Hair-accessories/Hair-accessories-3.jpg">
+                                </div>
+                                <div class="card-footer text-center">
+                                    <h4> Product Code: <span class="code">HA-003</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="HA-003" onclick="addToCart('HA-003')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header"  style="background-color: #ff4da6;;">
+                                    <h5> Spring Action Banana Clips Multi-Colour @ <span class="price">Rs 50/Half-Dozen</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Hair-accessories/Hair-accessories-4.jpg">
+                                </div>
+                                <div class="card-footer text-center"  style="background-color: #ffff66;">
+                                    <h4> Product Code: <span class="code">HA-004</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="HA-004" onclick="addToCart('HA-004')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div> 
+                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                            <div class="card">
+                                <div class="card-header"  style="background-color: #ff9966;">
+                                    <h5> Multi-Colour Banana Clips Multi-Colour @ <span class="price">Rs 75/Dozen</span> </h5>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img img-fluid" src="Products_images/Hair-accessories/Hair-accessories-5.jpg">
+                                </div>
+                                <div class="card-footer text-center">
+                                    <h4> Product Code: <span class="code">HA-005</span> </h4>
+                                    <button class="btn btn-success add_product_btn" id="HA-005" onclick="addToCart('HA-005')"> Add to Cart </button>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+
+                    <!--End of Hair accessories Section-->
+
+
+                </div>
+
+            </section>
+
+            <!--Start of Contact Section-->
+
+            <section class="contact">
+                <div class="container-fluid mb-3">
+                    <div class="alert-success rounded p-2" id="contact" style="background-color: #66ff33;">
+                        <h3 class="my-3" style="color:white; background-color:rgb(179, 24, 184); border-radius: 5px;"> We deal in retail and wholesale both. Prices may vary for wholesale customers. </h3>
+                        <h3 class="my-3" style="color:white; background-color:rgb(40, 230, 220); border-radius: 5px;"> Place your order through call or whatsapp on the contact number. </h3>
+                        <h3 class="my-3" style="color:white; background-color:rgb(255, 0, 0); border-radius: 5px;"> Please don't forget to mention the product code of the product you want to order. </h3>
+                        <h1 class="my-3 text-center" style="color:white; background-color:rgb(253, 249, 0); border-radius: 5px;"> <i class="fa fa-whatsapp" aria-hidden="true" style="font-size:inherit; color:#66ff33"></i> 1234567890 <i class="fa fa-volume-control-phone" aria-hidden="true" style="font-size:inherit; color:#66ff33"></i> </h1>
+                        
+                    </div>
+                </div>
+
+
+            </section>
+
+            <!--End of Contact Section-->
+
+
+            <!--Product Details Specification before adding to cart-->
+
+            <div class="row">
+                <div class="addCart col col-lg-5">
+                    <div class="card" style="border:2px solid black;">
+                        <div class="card-header text-center" style="background-color: #66ff33;">
+                            <h3> Product Details </h3>
+                        </div>
+                        <div class="card-body" style="background-color: #ffff66;">
+                            <h4> Product-Code: <span id="code"> </span> </h4> <br>
+                            <h4> Color: <input id="color" type="text" class="my-1" value="Default"> </h4> <br>
+                            <h4> Quantity: <input id="qty" type="number" class="my-1"> </h4> <br>
+                            <h4> Price: <span id="price"> </span> </h4> <br>
+                            <div class="text-center">
+                                <button class="mx-2 btn btn-success" onclick="actualAddition()"> Add To  Cart </button>
+                                <button class="mx-2 btn btn-danger" onclick="cancel_add()"> Cancel </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--End of Product Details Specification before adding to cart-->
+
+            <!--Cart Division-->
+            <div class="row">
+                <div class="cart col col-lg-5">
+                    <div class="card" style="border:2px solid black;">
+                        <div class="card-header text-center" style="background-color: #ff4da6;">
+                            <h3> Products in Cart </h3>
+                        </div>
+                        <div class="card-body" style="background-color: #ffff66;">
+                            <div class="cart-body">
+                                <div class="row justify-content-center">
+                                    <div class="col-auto">
+                                        <table id="cart-table" class="table table-responsive table-sm">
+                                            <tr>
+                                                <th class="text-center"> Product Code </th>
+                                                <th class="text-center"> Color </th>
+                                                <th class="text-center"> Quantity </th>
+                                                <th class="text-center"> Cost </th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <h5 class="text-center"> Total Cost: <span id="buy_cost">Rs 0</span></h5>
+                                <div class="text-center">
+                                    <button class="mx-2 btn btn-success" onclick="place_order()"> Place Order </button>
+                                    <button class="mx-2 btn btn-danger" onclick="close_cart()"> Close </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End of Cart Division-->
+
+        </main>
+
+    </body>
+</html>
